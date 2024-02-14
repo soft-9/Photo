@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  scroll-behavior: smooth;
+}
+
+.im {
+  background: url(./assets/img/bg-img-home-2.webp);
+  z-index: -3;
+}
+.im::before {
+  position: absolute;
+  content: "";
+  background: #20d598;
+  background: linear-gradient(
+    0deg,
+    #20d598 0%,
+    #269579 0%,
+    rgba(48, 53, 75, 0.8911939775910365) 55%,
+    #30354b 100%
+  );
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0.5;
+}
+.custom-select {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -30px;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 0 0 0 3px;
+  background-color: white;
+  outline: none;
+  width: 100%;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 5px;
+  padding: 13px;
+}
+.custom-select select option {
+  padding: 100px;
+}
+.custom-select::after {
+  content: url("/src/assets/img/arrow.svg");
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+}
+
+.custom-select:hover::after {
+  transform: translateY(-50%) rotate(180deg); /* Rotate the arrow by 180 degrees on hover */
+}
+
+.custom-select select:focus + ::after {
+  transform: translateY(-50%) rotate(180deg); /* Rotate the arrow by 180 degrees on focus */
+}
+
+@media (min-width: 768px) {
+  .custom-select select {
+    height: 65px;
+    width: 125px;
+  }
+  .custom-select {
+    top: 0;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  padding: 0;
+  background: #eee;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  font-size: 20px;
+  color: #7c7c7c;
+}
